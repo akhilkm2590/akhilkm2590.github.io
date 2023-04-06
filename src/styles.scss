@@ -10,6 +10,7 @@
     height: 100%;
     width: 100%;
     display: flex;
+    position: absolute;
 }
 
 .side-bar {
@@ -199,5 +200,9 @@ h1 {
   }
 
   .chart-content {
-    margin-top: 2rem;
+    margin-top: 4rem;
+  }
+
+  figure svg {
+    width: 100% !important;
   }

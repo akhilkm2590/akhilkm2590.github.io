@@ -11,11 +11,11 @@ export class AppComponent implements OnInit {
   title = 'dashboard';
   isMenuCollapsed: boolean = true;
   private data = [
-    {"Framework": "Vue", "Stars": "166443"},
-    {"Framework": "React", "Stars": "150793"},
-    {"Framework": "Angular", "Stars": "62342"},
-    {"Framework": "Backbone", "Stars": "27647"},
-    {"Framework": "Ember", "Stars": "21471"},
+    {"Framework": "Healthcare", "Stars": "5"},
+    {"Framework": "Support", "Stars": "4"},
+    {"Framework": "Workforce", "Stars": "5"},
+    {"Framework": "Saleforce", "Stars": "3"},
+    {"Framework": "Stategic Affairs", "Stars": "6"},
   ];
   private svg: any;
   private margin = 50;
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
   }
 
   createSvg(): void {
-    this.svg = d3.select("figure#bar")
+    this.svg = d3.selectAll("figure.bar")
     .append("svg")
     .attr("width", this.width + (this.margin * 2))
     .attr("height", this.height + (this.margin * 2))
@@ -60,17 +60,14 @@ export class AppComponent implements OnInit {
     .attr("transform", "translate(0," + this.height + ")")
     .call(d3.axisBottom(x))
     .selectAll("text")
-    .attr("transform", "translate(-10,0)rotate(-45)")
+    .attr("transform", "translate(0,0)rotate(0)")
     .style("text-anchor", "end");
   
     // Create the Y-axis band scale
-    const y = d3.scaleLinear()
-    .domain([0, 200000])
-    .range([this.height, 0]);
+    const y = d3.scaleLinear().domain([0, 20]).range([this.height, 0]);
   
     // Draw the Y-axis on the DOM
-    this.svg.append("g")
-    .call(d3.axisLeft(y));
+    this.svg.append("g").call(d3.axisLeft(y));
   
     // Create and fill the bars
     this.svg.selectAll("bars")
@@ -81,6 +78,6 @@ export class AppComponent implements OnInit {
     .attr("y", (d: any) => y(d.Stars))
     .attr("width", x.bandwidth())
     .attr("height", (d: any) => this.height - y(d.Stars))
-    .attr("fill", "#d04a35");
+    .attr("fill", "#0a27f7");
   }
 }
