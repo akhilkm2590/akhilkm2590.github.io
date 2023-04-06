@@ -57,6 +57,9 @@
             align-items: center;
             justify-content: center;
             padding-left: 1rem;
+        }
+
+        .outer:nth-child(1) {
             border-left: 5px solid #044cf5;
         }
     }
