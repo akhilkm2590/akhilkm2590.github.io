@@ -1,0 +1,202 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main-content {
+    background-color: #dae5ff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    grid-gap: 2rem;
+    border-right: 1px solid #a6a9af;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #dae5ff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    box-shadow: 5px 0 5px -2px #888;
+
+    .menu-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4rem;
+        grid-gap: 4rem;
+        justify-content: space-between;
+
+        .sub {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            grid-gap: 1rem;
+            justify-content: space-between;
+            border-left: 5px solid #0000;
+            cursor: pointer;
+
+            label {
+                cursor: pointer;
+            }
+        }
+
+        .outer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 1rem;
+            border-left: 5px solid #044cf5;
+        }
+    }
+
+    svg {
+        cursor: pointer;
+    }
+
+    .menu-btn {
+        padding: 2rem;
+    }
+}
+
+.content-right {
+    width: 100%;
+    padding: 2rem;
+    margin-left: 100px;
+}
+
+h1 {
+    color: #49618f;
+    font-weight: bold;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    position: fixed;
+    width: 90%;
+    height: 3.5rem;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    grid-gap: 1rem;
+}
+
+.div-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    grid-gap: 1rem;
+}
+
+.div-card-outer {
+    margin-top: 4rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #fff;
+    border-left: 5px solid #c98612;
+
+    .dot {
+        float: right;
+        margin-top: -10px;
+        font-weight: bold;
+        color: #657185;
+    }
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    grid-gap: 1rem;
+}
+
+.task {
+    font-weight: 600;
+    color: #657185;
+}
+
+.total-task {
+    font-size: 4rem;
+}
+
+.task-count {
+    font-size: 2rem;
+}
+
+.task-desc {
+    font-weight: 600;
+    color: #717783;
+}
+
+.div-task-progress-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    grid-gap: 0.5rem;
+}
+
+.div-task-progress {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 0;
+  }
+  
+  .div-task-progress::after {
+    content: attr(data-progress);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px;
+    border-radius: 50%;
+    background: white;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .div-card-outer:nth-child(2) .div-task-progress {
+    background: conic-gradient(green var(--progress), #cccc 0deg);
+  }
+
+  .div-card-outer:nth-child(3) .div-task-progress {
+    background: conic-gradient(#f9ad03 var(--progress), #cccc 0deg);
+  }
+
+  .div-card-outer:nth-child(4) .div-task-progress {
+    background: conic-gradient(red var(--progress), #cccc 0deg);
+  }
+
+  .div-card-outer:nth-child(5) .div-task-progress {
+    background: conic-gradient(#0a27f7 var(--progress), #cccc 0deg);
+  }
+
+  .chart-parent-container {
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 2rem;
+    gap: 2rem;
+  }
+
+  .chart-content {
+    margin-top: 2rem;
+  }

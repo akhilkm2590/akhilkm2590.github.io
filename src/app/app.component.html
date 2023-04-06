@@ -1,0 +1,114 @@
+
+<div class="main-content">
+  <div class="side-bar" [ngStyle]="isMenuCollapsed ? {'width': '85px'} : {'width': '200px'}" (mouseenter)="isMenuCollapsed = false"  (mouseleave) ="isMenuCollapsed = true">
+    <svg (click)="menuExpandOrCollapse()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="menu-btn bi bi-list" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+    <div class="menu-list">
+      <div class="outer">
+        <div class="sub" (click)="loadPage()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+          </svg>
+          <label *ngIf="!isMenuCollapsed">Dashboard</label>
+        </div>
+      </div>
+      <div class="outer">
+        <div class="sub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-buildings" viewBox="0 0 16 16">
+            <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022ZM6 8.694 1 10.36V15h5V8.694ZM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15Z"/>
+            <path d="M2 11h1v1H2v-1Zm2 0h1v1H4v-1Zm-2 2h1v1H2v-1Zm2 0h1v1H4v-1Zm4-4h1v1H8V9Zm2 0h1v1h-1V9Zm-2 2h1v1H8v-1Zm2 0h1v1h-1v-1Zm2-2h1v1h-1V9Zm0 2h1v1h-1v-1ZM8 7h1v1H8V7Zm2 0h1v1h-1V7Zm2 0h1v1h-1V7ZM8 5h1v1H8V5Zm2 0h1v1h-1V5Zm2 0h1v1h-1V5Zm0-2h1v1h-1V3Z"/>
+          </svg>
+          <label *ngIf="!isMenuCollapsed">Tasks</label>
+        </div>
+      </div>
+      <div class="outer">
+        <div class="sub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-columns-gap" viewBox="0 0 16 16">
+            <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
+          </svg>
+          <label *ngIf="!isMenuCollapsed">Settings</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-right">
+    <div class="header">
+      <img width="40" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="/>
+      <h1>Executive Dashboard</h1>
+      <div class="profile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-gear-wide" viewBox="0 0 16 16">
+          <path d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="div-cards">
+      <div class="div-card-outer">
+        <label class="dot">...</label>
+        <div class="cards">
+          <label class="task total-task">45</label>
+          <label class="task-desc">Total Number of Tasks</label>
+        </div>
+      </div>
+      <div class="div-card-outer">
+        <label class="dot">...</label>
+        <div class="cards">
+          <div class="div-task-progress-parent">
+            <div class="div-task-progress" data-progress="14" style="--progress: 194deg;"></div>
+            <label class="task-completion-percent">54%</label>
+          </div>
+          <label class="task-desc">Number of Tasks On Track</label>
+        </div>
+      </div>
+      <div class="div-card-outer">
+        <label class="dot">...</label>
+        <div class="cards">
+          <div class="div-task-progress-parent">
+            <div class="div-task-progress" data-progress="8" style="--progress: 108deg;"></div>
+            <label class="task-completion-percent">30%</label>
+          </div>
+          <label class="task-desc">Number of Tasks Delayed</label>
+        </div>
+      </div>
+      <div class="div-card-outer">
+        <label class="dot">...</label>
+        <div class="cards">
+          <div class="div-task-progress-parent">
+            <div class="div-task-progress" data-progress="4" style="--progress: 58deg;"></div>
+            <label class="task-completion-percent">16%</label>
+          </div>
+          <label class="task-desc">Number of Tasks Significant Delayed</label>
+        </div>
+      </div>
+      <div class="div-card-outer">
+        <label class="dot">...</label>
+        <div class="cards">
+          <div class="div-task-progress-parent">
+            <div class="div-task-progress" data-progress="19" style="--progress: 68deg;"></div>
+            <label class="task-completion-percent">19%</label>
+          </div>
+          <label class="task-desc">Number of Tasks Completed</label>
+        </div>
+      </div>
+    </div>
+    <div class="chart-parent-container">
+      <div class="chart-content">
+        <h1>Tasks Distribution</h1>
+        <div class="chart"></div>
+      </div>
+      <div class="chart-content">
+        <h1>Tasks by Beinex Sectors</h1>
+        <div class="chart">
+          <figure id="bar"></figure>
+        </div>
+      </div>
+      <div class="chart-content">
+        <h1>Tasks by Auraa</h1>
+        <div class="chart"></div>
+      </div>
+    </div>
+  </div>
+</div>
